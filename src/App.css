@@ -1,0 +1,83 @@
+:root {
+  --primary-green: rgb(2, 101, 2);
+  --dark-bg: rgb(2, 11, 4);
+  --card-bg: rgba(45, 115, 45, 0.85);
+  --text-light: whitesmoke;
+  --accent-red: #ff4444;
+  --donate-blue: rgb(6, 197, 240);
+  --nav-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Base Card & Typography from Legacy CSS */
+.view-container {
+  min-height: calc(100vh - var(--nav-height) - 80px);
+  padding: calc(var(--nav-height) + 2rem) 1.5rem 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+h2 {
+  color: var(--accent-red);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-green);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  color: #000;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin: 1.5rem 0 0.5rem 0;
+  background-color: var(--donate-blue);
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+p, li {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: var(--primary-green);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--donate-blue);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

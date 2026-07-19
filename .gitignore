@@ -1,0 +1,18 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Production build artifacts
+dist/
+dist-ssr/
+*.local
+
+# Dependencies (Crucial to ignore!)
+node_modules/
+
+# Editor environments and OS junk
+.vscode/
+.idea/
+.DS_Store
+thumbs.db
