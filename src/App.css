@@ -107,3 +107,121 @@ ul li {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* =========================================
+   NAVBAR STYLES (Desktop & Mobile)
+   ========================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgb(2, 11, 4);
+  display: flex;
+  justify-content: space-between;
+  alignItems: center;
+  padding: 0 5%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  z-index: 1000;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden; /* Prevents long titles from breaking layout */
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-title {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  color: whitesmoke;
+  white-space: nowrap; /* Forces title to stay on one line */
+}
+
+/* Desktop Links Container */
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.donate-button {
+  background-color: var(--donate-blue);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Hamburger - Hidden on Desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* =========================================
+   MOBILE MEDIA QUERY (Screens under 800px)
+   ========================================= */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+
+  .nav-title {
+    font-size: 1.1rem; /* Shrink title slightly to fit perfectly */
+  }
+
+  /* Hide normal horizontal links, transform into a vertical dropdown */
+  .nav-list {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: rgb(2, 11, 4);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+  }
+
+  /* When the 'mobile-open' class is applied by React state, display the dropdown */
+  .nav-list.mobile-open {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 15px 0;
+  }
+}
