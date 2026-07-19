@@ -19,7 +19,7 @@ const Loader = ({ onComplete }) => {
   return (
     <div style={styles.loaderOverlay}>
       <div style={styles.content}>
-        <img src="../src/components/ttk13.png" alt="TTK Logo" style={styles.logo} />
+        <img src="/ttk13.png" alt="TTK Logo" style={styles.logo} />
         <div style={styles.textContainer}>
           {letters.map((char, index) => (
             <span

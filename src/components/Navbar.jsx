@@ -21,7 +21,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav style={styles.navbar}>
       <div style={styles.brand} onClick={() => handleNavClick('intro')}>
-        <img src="../src/components/ttk13.png" alt="Logo" style={styles.logo} />
+        <img src="/ttk13.png" alt="Logo" style={styles.logo} />
         <span style={styles.title}>Teens For Teens Kenya</span>
       </div>
 
